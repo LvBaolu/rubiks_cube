@@ -3,4 +3,5 @@
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
-nam
+name: build
+on
