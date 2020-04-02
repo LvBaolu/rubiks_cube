@@ -4,4 +4,4 @@
 # against bad commits.
 
 name: build
-on: [pull_
+on: [pull_req
