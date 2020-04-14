@@ -11,3 +11,4 @@ jobs:
     strategy:
       matrix:
         # Use these Java versions
+        ja
