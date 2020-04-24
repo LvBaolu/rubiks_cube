@@ -12,4 +12,4 @@ jobs:
       matrix:
         # Use these Java versions
         java: [
-          17,    # Current Java LTS & min
+          17,    # Current Java LTS & minimum support
