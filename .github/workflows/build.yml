@@ -14,4 +14,4 @@ jobs:
         java: [
           17,    # Current Java LTS & minimum supported by Minecraft
         ]
-        # and 
+        # and run on
