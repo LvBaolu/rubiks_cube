@@ -15,4 +15,4 @@ jobs:
           17,    # Current Java LTS & minimum supported by Minecraft
         ]
         # and run on both Linux and Windows
-        
+        os: [ubuntu-
