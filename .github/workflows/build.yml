@@ -23,4 +23,4 @@ jobs:
       - name: validate gradle wrapper
         uses: gradle/wrapper-validation-action@v1
       - name: setup jdk ${{ matrix.java }}
-        uses
+        uses: actions/
