@@ -27,4 +27,4 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
           distribution: 'microsoft'
-      - name: make gradle
+      - name: make gradle wrapper
