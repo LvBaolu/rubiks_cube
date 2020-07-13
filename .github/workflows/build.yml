@@ -28,4 +28,4 @@ jobs:
           java-version: ${{ matrix.java }}
           distribution: 'microsoft'
       - name: make gradle wrapper executable
-        if: ${{ runner
+        if: ${{ runner.os != 'Window
