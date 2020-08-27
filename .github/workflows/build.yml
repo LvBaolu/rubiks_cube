@@ -33,4 +33,4 @@ jobs:
       - name: build
         run: ./gradlew build
       - name: capture build artifacts
-        if:
+        if: ${{ 
