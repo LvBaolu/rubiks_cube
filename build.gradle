@@ -13,3 +13,12 @@ group = project.maven_group
 
 loom {
 	accessWidenerPath = file("src/main/resources/emitrades.accesswidener")
+}
+
+repositories {
+	maven {
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com/"
+	}
+    maven {
+        name = "Nova Committee - Release"
