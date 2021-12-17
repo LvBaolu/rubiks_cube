@@ -22,3 +22,9 @@ repositories {
 	}
     maven {
         name = "Nova Committee - Release"
+        url = "https://maven.nova-committee.cn/releases/"
+    }
+    maven {
+        name = "Nova Committee - Snapshot"
+        url = "https://maven.nova-committee.cn/snapshots/"
+    }
