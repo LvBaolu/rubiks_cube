@@ -148,3 +148,8 @@ if ! "$cygwin" && ! "$darwin" && ! "$nonstop" ; then
         # shellcheck disable=SC3045 
         MAX_FD=$( ulimit -H -n ) ||
             warn "Could not query maximum file descriptor limit"
+    esac
+    case $MAX_FD in  #(
+      '' | soft) :;; #(
+      *)
+        # In POSIX sh, ulimit -n is undefined. That's why the result is checked to see if it worked.
