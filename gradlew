@@ -162,3 +162,7 @@ fi
 # Collect all arguments for the java command, stacking in reverse order:
 #   * args from the command line
 #   * the main class name
+#   * -classpath
+#   * -D...appname settings
+#   * --module-path (only if needed)
+#   * DEFAULT_JVM_OPTS, JAVA_OPTS, and GRADLE_OPTS environment variables.
