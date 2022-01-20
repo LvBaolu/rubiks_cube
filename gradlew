@@ -176,3 +176,11 @@ if "$cygwin" || "$msys" ; then
 
     # Now convert the arguments - kludge to limit ourselves to /bin/sh
     for arg do
+        if
+            case $arg in                                #(
+              -*)   false ;;                            # don't mess with options #(
+              /?*)  t=${arg#/} t=/${t%%/*}              # looks like a POSIX filepath
+                    [ -e "$t" ] ;;                      #(
+              *)    false ;;
+            esac
+        then
