@@ -205,3 +205,7 @@ fi
 #   * put everything else in single quotes, so that it's not re-expanded.
 
 set -- \
+        "-Dorg.gradle.appname=$APP_BASE_NAME" \
+        -classpath "$CLASSPATH" \
+        org.gradle.wrapper.GradleWrapperMain \
+        "$@"
