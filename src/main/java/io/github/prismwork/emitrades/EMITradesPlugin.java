@@ -39,3 +39,10 @@ public class EMITradesPlugin implements EmiPlugin {
             "wandering_trader",
             entry -> false,
             entry -> false,
+            ImmutableSet.<Item>builder().build(),
+            ImmutableSet.<Block>builder().build(),
+            SoundEvents.ENTITY_WANDERING_TRADER_YES
+    );
+    public static final EmiRecipeCategory VILLAGER_TRADES
+            = new EmiRecipeCategory(new Identifier("emitrades", "villager_trades"), EmiStack.of(Items.EMERALD));
+    public static EMITradesConfig.Config CONFIG;
