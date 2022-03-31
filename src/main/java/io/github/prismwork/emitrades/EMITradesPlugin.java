@@ -51,3 +51,8 @@ public class EMITradesPlugin implements EmiPlugin {
     @Override
     public void register(EmiRegistry registry) {
         CONFIG = EMITradesConfig.load(CONFIG_FILE);
+        registry.addCategory(VILLAGER_TRADES);
+        Random random = Random.create();
+        for (VillagerProfession profession : Registries.VILLAGER_PROFESSION) {
+            VillagerEntity villager = (VillagerEntity)
+                    Registries.ENTITY_TYPE.get(new Identifier("minecraft", "villager")).create(MinecraftClient.getInstance().world);
