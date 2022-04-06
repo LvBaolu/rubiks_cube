@@ -75,3 +75,10 @@ public class EMITradesPlugin implements EmiPlugin {
                         registry.addRecipe(new VillagerTrade(new TradeProfile.DefaultImpl(profession, offer, level + 1, villager1), id.get()));
                         id.getAndIncrement();
                     } else {
+                        try {
+                            int attempts = 5;
+                            TreeSet<TradeOffer> genOffers = new TreeSet<>(this::compareOffers);
+                            TradeOffer inOffer;
+                            while (attempts > 0) {
+                                inOffer = offer.create(MinecraftClient.getInstance().player, random);
+                                if (genOffers.add(inOffer))
