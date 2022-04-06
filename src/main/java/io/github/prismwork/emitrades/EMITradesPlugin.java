@@ -63,3 +63,10 @@ public class EMITradesPlugin implements EmiPlugin {
             AtomicInteger id = new AtomicInteger();
             Int2ObjectMap<TradeOffers.Factory[]> offers = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(profession);
             if (offers == null || offers.isEmpty()) continue;
+            int level = 0;
+            while (level < 5) {
+                VillagerEntity villager1 = (VillagerEntity)
+                        Registries.ENTITY_TYPE.get(new Identifier("minecraft", "villager")).create(MinecraftClient.getInstance().world);
+                if (villager1 != null) {
+                    villager1.setVillagerData(villager1.getVillagerData().withProfession(profession).withLevel(level + 1));
+                }
