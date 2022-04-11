@@ -93,3 +93,7 @@ public class EMITradesPlugin implements EmiPlugin {
                             });
                         } catch (Exception ignored) {}
                     }
+                }
+                level++;
+            }
+        }
