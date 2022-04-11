@@ -97,3 +97,10 @@ public class EMITradesPlugin implements EmiPlugin {
                 level++;
             }
         }
+        WanderingTraderEntity wanderingTrader = (WanderingTraderEntity) Registries.ENTITY_TYPE.get(new Identifier("minecraft", "wandering_trader"))
+                .create(MinecraftClient.getInstance().world);
+        registry.addWorkstation(VILLAGER_TRADES, EntityEmiStack.of(wanderingTrader));
+        AtomicInteger wanderingTraderId = new AtomicInteger();
+        TradeOffers.WANDERING_TRADER_TRADES.forEach((lvl, offers) -> {
+            for (TradeOffers.Factory offer : offers) {
+                if (isVanillaFactory(offer)) {
