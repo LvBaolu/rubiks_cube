@@ -104,3 +104,10 @@ public class EMITradesPlugin implements EmiPlugin {
         TradeOffers.WANDERING_TRADER_TRADES.forEach((lvl, offers) -> {
             for (TradeOffers.Factory offer : offers) {
                 if (isVanillaFactory(offer)) {
+                    registry.addRecipe(new VillagerTrade(new TradeProfile.DefaultImpl(WANDERING_TRADER_PLACEHOLDER, offer, lvl, wanderingTrader), wanderingTraderId.get()));
+                    wanderingTraderId.getAndIncrement();
+                } else {
+                    try {
+                        int attempts = 5;
+                        TreeSet<TradeOffer> genOffers = new TreeSet<>(this::compareOffers);
+                        TradeOffer inOffer;
