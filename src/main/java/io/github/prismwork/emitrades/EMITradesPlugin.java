@@ -118,3 +118,11 @@ public class EMITradesPlugin implements EmiPlugin {
                             else
                                 attempts--;
                         }
+                        int finalLevel = lvl;
+                        genOffers.forEach(tradeOffer -> {
+                            registry.addRecipe(new VillagerTrade(new TradeProfile.DefaultImpl(WANDERING_TRADER_PLACEHOLDER, new FakeFactory(tradeOffer), finalLevel, wanderingTrader), wanderingTraderId.get()));
+                            wanderingTraderId.getAndIncrement();
+                        });
+                    } catch (Exception ignored) {}
+                }
+            }
