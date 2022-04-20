@@ -126,3 +126,12 @@ public class EMITradesPlugin implements EmiPlugin {
                     } catch (Exception ignored) {}
                 }
             }
+        });
+    }
+
+    private static boolean isVanillaFactory(TradeOffers.Factory offer) {
+        return offer instanceof TradeOffers.SellSuspiciousStewFactory ||
+                offer instanceof TradeOffers.SellEnchantedToolFactory ||
+                offer instanceof TradeOffers.EnchantBookFactory ||
+                offer instanceof TradeOffers.SellMapFactory ||
+                offer instanceof TradeOffers.SellPotionHoldingItemFactory ||
