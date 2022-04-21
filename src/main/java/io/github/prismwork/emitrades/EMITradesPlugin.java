@@ -148,3 +148,10 @@ public class EMITradesPlugin implements EmiPlugin {
         diff = Registries.ITEM.getRawId(a.getSecondBuyItem().getItem()) - Registries.ITEM.getRawId(b.getSecondBuyItem().getItem());
         if (diff != 0) return diff;
         diff = Registries.ITEM.getRawId(a.getSellItem().getItem()) - Registries.ITEM.getRawId(b.getSellItem().getItem());
+        return diff;
+    }
+
+    public static class FakeFactory implements TradeOffers.Factory {
+        public final ItemStack first;
+        public final ItemStack second;
+        public final ItemStack sell;
