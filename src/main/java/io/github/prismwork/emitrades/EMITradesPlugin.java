@@ -155,3 +155,9 @@ public class EMITradesPlugin implements EmiPlugin {
         public final ItemStack first;
         public final ItemStack second;
         public final ItemStack sell;
+
+        public FakeFactory(TradeOffer offer) {
+            this.first = offer.getOriginalFirstBuyItem();
+            this.second = offer.getSecondBuyItem();
+            this.sell = offer.getSellItem();
+        }
