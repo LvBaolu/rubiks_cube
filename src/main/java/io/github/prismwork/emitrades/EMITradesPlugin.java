@@ -161,3 +161,10 @@ public class EMITradesPlugin implements EmiPlugin {
             this.second = offer.getSecondBuyItem();
             this.sell = offer.getSellItem();
         }
+
+        @Nullable
+        @Override
+        public TradeOffer create(Entity entity, Random random) {
+            throw new AssertionError(); // Not actually functional, only used for satisfying TradeProfile so this method throws an error
+        }
+    }
