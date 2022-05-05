@@ -13,3 +13,16 @@ public class EMITradesConfig {
         if (!file.getName().endsWith(".json5"))
             throw new RuntimeException("Failed to read config");
         Config cfg = null;
+        if (file.exists()) {
+            try (BufferedReader reader = new BufferedReader(new FileReader(file));) {
+                StringBuilder stringBuilder = new StringBuilder();
+                String line;
+                String ls = System.getProperty("line.separator");
+                while ((line = reader.readLine()) != null) {
+                    stringBuilder.append(line);
+                    stringBuilder.append(ls);
+                }
+                stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+                reader.close();
+
+                String content = stringBuilder.toString();
