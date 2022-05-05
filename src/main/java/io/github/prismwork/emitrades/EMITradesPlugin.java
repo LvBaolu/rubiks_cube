@@ -168,3 +168,4 @@ public class EMITradesPlugin implements EmiPlugin {
             throw new AssertionError(); // Not actually functional, only used for satisfying TradeProfile so this method throws an error
         }
     }
+}
