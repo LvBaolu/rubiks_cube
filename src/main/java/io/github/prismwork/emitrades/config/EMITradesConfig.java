@@ -26,3 +26,12 @@ public class EMITradesConfig {
                 reader.close();
 
                 String content = stringBuilder.toString();
+                cfg = PrismConfig.getInstance().serialize(
+                        Config.class,
+                        content,
+                        DefaultSerializers.getInstance().json5(Config.class)
+                );
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
