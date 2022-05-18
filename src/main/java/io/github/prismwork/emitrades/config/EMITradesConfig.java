@@ -35,3 +35,9 @@ public class EMITradesConfig {
                 throw new RuntimeException(e);
             }
         }
+        if (cfg == null) cfg = new Config();
+        save(file, cfg);
+        return cfg;
+    }
+
+    public static void save(File file, Config cfg) {
