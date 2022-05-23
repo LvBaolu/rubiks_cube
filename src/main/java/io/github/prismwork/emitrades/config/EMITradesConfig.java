@@ -41,3 +41,6 @@ public class EMITradesConfig {
     }
 
     public static void save(File file, Config cfg) {
+        PrismConfig.getInstance().deserializeAndWrite(
+                Config.class,
+                cfg,
