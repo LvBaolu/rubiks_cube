@@ -44,3 +44,7 @@ public class EMITradesConfig {
         PrismConfig.getInstance().deserializeAndWrite(
                 Config.class,
                 cfg,
+                DefaultDeserializers.getInstance().json5(Config.class),
+                file
+        );
+    }
