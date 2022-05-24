@@ -48,3 +48,8 @@ public class EMITradesConfig {
                 file
         );
     }
+
+    public static class Config {
+        @Comment("Declares whether the villager entity model is shown in the recipe UI.")
+        public boolean enable3DVillagerModelInRecipes = true;
+    }
