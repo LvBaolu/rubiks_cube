@@ -26,3 +26,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.village.TradeOffers;
+import net.minecraft.village.VillagerProfession;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
