@@ -30,3 +30,9 @@ import net.minecraft.village.VillagerProfession;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.List;
+
+public class VillagerTrade implements EmiRecipe {
+    private final TradeProfile profile;
+    private final List<EmiIngredient> inputs;
+    private final List<EmiStack> outputs;
