@@ -46,3 +46,11 @@ public class VillagerTrade implements EmiRecipe {
         this.outputs = new ArrayList<>();
         this.catalysts = profile.villager() != null ?
                 List.of(EntityEmiStack.ofScaled(profile.villager(), 12.0f)) : List.of();
+        this.id = id;
+        VillagerProfession internalProf = profile.profession();
+        if (internalProf.equals(EMITradesPlugin.WANDERING_TRADER_PLACEHOLDER)) {
+            this.title = EmiPort.translatable("emi.emitrades.placeholder.wandering_trader");
+        } else {
+            this.title = EmiPort.translatable("entity.minecraft.villager." + profile.profession().id().substring(profile.profession().id().lastIndexOf(":") + 1))
+                    .append(" - ").append(EmiPort.translatable("emi.emitrades.profession.lvl." + profile.level()));
+        }
