@@ -54,3 +54,13 @@ public class VillagerTrade implements EmiRecipe {
             this.title = EmiPort.translatable("entity.minecraft.villager." + profile.profession().id().substring(profile.profession().id().lastIndexOf(":") + 1))
                     .append(" - ").append(EmiPort.translatable("emi.emitrades.profession.lvl." + profile.level()));
         }
+        TradeOffers.Factory offer = profile.offer();
+        if (offer instanceof TradeOffers.BuyForOneEmeraldFactory factory) {
+            inputs.add(0, EmiStack.of(factory.buy, factory.price));
+            inputs.add(1, EmiStack.EMPTY);
+            outputs.add(0, EmiStack.of(Items.EMERALD));
+        } else if (offer instanceof TradeOffers.SellItemFactory factory) {
+            inputs.add(0, EmiStack.of(Items.EMERALD, factory.price));
+            inputs.add(1, EmiStack.EMPTY);
+            outputs.add(0, EmiStack.of(factory.sell, factory.count));
+        } else if (offer instanceof TradeOffers.SellSuspiciousStewFactory factory) {
