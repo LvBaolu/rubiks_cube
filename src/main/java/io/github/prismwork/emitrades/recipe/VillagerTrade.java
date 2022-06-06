@@ -36,3 +36,13 @@ public class VillagerTrade implements EmiRecipe {
     private final TradeProfile profile;
     private final List<EmiIngredient> inputs;
     private final List<EmiStack> outputs;
+    private final List<EmiIngredient> catalysts;
+    private final int id;
+    private final MutableText title;
+
+    public VillagerTrade(TradeProfile profile, int id) {
+        this.profile = profile;
+        this.inputs = new ArrayList<>();
+        this.outputs = new ArrayList<>();
+        this.catalysts = profile.villager() != null ?
+                List.of(EntityEmiStack.ofScaled(profile.villager(), 12.0f)) : List.of();
