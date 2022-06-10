@@ -64,3 +64,11 @@ public class VillagerTrade implements EmiRecipe {
             inputs.add(1, EmiStack.EMPTY);
             outputs.add(0, EmiStack.of(factory.sell, factory.count));
         } else if (offer instanceof TradeOffers.SellSuspiciousStewFactory factory) {
+            inputs.add(0, EmiStack.of(Items.EMERALD, 1));
+            inputs.add(1, EmiStack.EMPTY);
+            ItemStack stack = new ItemStack(Items.SUSPICIOUS_STEW, 1);
+            SuspiciousStewItem.addEffectToStew(stack, factory.effect, factory.duration);
+            outputs.add(0, EmiStack.of(stack));
+        } else if (offer instanceof TradeOffers.ProcessItemFactory factory) {
+            inputs.add(0, EmiStack.of(Items.EMERALD, factory.price));
+            inputs.add(1, EmiStack.of(factory.secondBuy, factory.secondCount));
