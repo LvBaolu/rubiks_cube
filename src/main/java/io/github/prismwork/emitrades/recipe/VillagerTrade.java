@@ -119,3 +119,10 @@ public class VillagerTrade implements EmiRecipe {
     public EmiRecipeCategory getCategory() {
         return EMITradesPlugin.VILLAGER_TRADES;
     }
+
+    @Override
+    public @Nullable Identifier getId() {
+        return new Identifier("emi", "emitrades/villager_trades/" + profile.profession().id().substring(profile.profession().id().lastIndexOf(":") + 1) + "_" + id);
+    }
+
+    @Override
