@@ -142,3 +142,10 @@ public class VillagerTrade implements EmiRecipe {
         return (catalysts.isEmpty() || !EMITradesPlugin.CONFIG.enable3DVillagerModelInRecipes) ? Math.max(86, textRenderer.getWidth(title) + 2) :
                 Math.max(extraWidth + 85, extraWidth + textRenderer.getWidth(title));
     }
+
+    @Override
+    public int getDisplayHeight() {
+        return 28;
+    }
+
+    @Override
