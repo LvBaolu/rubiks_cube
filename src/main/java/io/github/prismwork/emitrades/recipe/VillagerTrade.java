@@ -163,3 +163,7 @@ public class VillagerTrade implements EmiRecipe {
             SlotWidget villagerSlot = new SlotWidget(catalysts.get(0), 1, 6).drawBack(false);
             if (profile.villager() instanceof VillagerEntity villager) {
                 villagerSlot.appendTooltip(EmiPort.translatable("emi.emitrades.profession.lvl." + villager.getVillagerData().getLevel()).formatted(Formatting.YELLOW));
+            }
+            widgets.add(villagerSlot);
+            widgets.addText(EmiPort.ordered(title),
+                    21, 0, 16777215, true);
