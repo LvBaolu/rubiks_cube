@@ -167,3 +167,13 @@ public class VillagerTrade implements EmiRecipe {
             widgets.add(villagerSlot);
             widgets.addText(EmiPort.ordered(title),
                     21, 0, 16777215, true);
+            widgets.addSlot(inputs.get(0), 21, 10);
+            widgets.addSlot(inputs.get(1), 41, 10);
+            widgets.addTexture(EmiTexture.EMPTY_ARROW, 60, 10);
+            SlotWidget outputSlot = new SlotWidget(outputs.get(0), 85, 10).recipeContext(this);
+            wrapOutput(widgets, outputSlot);
+        }
+    }
+
+    private void wrapOutput(WidgetHolder widgets, SlotWidget outputSlot) {
+        if (profile.offer() instanceof TradeOffers.SellDyedArmorFactory) {
