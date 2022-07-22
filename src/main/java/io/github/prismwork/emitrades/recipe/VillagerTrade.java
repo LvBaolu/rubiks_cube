@@ -182,3 +182,11 @@ public class VillagerTrade implements EmiRecipe {
             outputSlot = outputSlot.appendTooltip(EmiPort.translatable("emi.emitrades.random_effect").formatted(Formatting.YELLOW));
         } else if (profile.offer() instanceof TradeOffers.SellMapFactory) {
             outputSlot = outputSlot.appendTooltip(EmiPort.translatable("emi.emitrades.random_structure").formatted(Formatting.YELLOW));
+        } else if (profile.offer() instanceof TradeOffers.EnchantBookFactory || profile.offer() instanceof TradeOffers.SellEnchantedToolFactory) {
+            List<Enchantment> list
+                    = Registries.ENCHANTMENT.stream().filter(Enchantment::isAvailableForEnchantedBookOffer).toList();
+            if (!list.isEmpty()) {
+                outputSlot = outputSlot.appendTooltip(Text.translatable("emi.emitrades.enchantments.possible")
+                        .formatted(Formatting.AQUA));
+                for (Enchantment enchantment : list) {
+                    outputSlot = outputSlot.appendTooltip(Text.literal("- ")
