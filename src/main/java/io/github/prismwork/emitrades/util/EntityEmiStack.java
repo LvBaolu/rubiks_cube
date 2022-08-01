@@ -26,3 +26,9 @@ import org.jetbrains.annotations.Nullable;
 import org.joml.Quaternionf;
 
 import java.util.ArrayList;
+import java.util.List;
+
+public class EntityEmiStack extends EmiStack {
+    private final @Nullable Entity entity;
+    private final EntityEntry entry;
+    private final double scale;
