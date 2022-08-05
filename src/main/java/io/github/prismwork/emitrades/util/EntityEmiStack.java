@@ -48,3 +48,15 @@ public class EntityEmiStack extends EmiStack {
     public static EntityEmiStack of(@Nullable Entity entity) {
         return new EntityEmiStack(entity);
     }
+
+    public static EntityEmiStack ofScaled(@Nullable Entity entity, double scale) {
+        return new EntityEmiStack(entity, scale);
+    }
+
+    @Override
+    public EmiStack copy() {
+        EntityEmiStack stack = new EntityEmiStack(entity);
+        stack.setRemainder(getRemainder().copy());
+        stack.comparison = comparison;
+        return stack;
+    }
