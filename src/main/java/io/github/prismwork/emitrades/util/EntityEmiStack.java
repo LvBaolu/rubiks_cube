@@ -60,3 +60,7 @@ public class EntityEmiStack extends EmiStack {
         stack.comparison = comparison;
         return stack;
     }
+
+    @Override
+    public boolean isEmpty() {
+        return entity == null;
