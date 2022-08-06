@@ -64,3 +64,14 @@ public class EntityEmiStack extends EmiStack {
     @Override
     public boolean isEmpty() {
         return entity == null;
+    }
+
+    @Override
+    public void render(MatrixStack matrices, int x, int y, float delta, int flags) {
+        if (entity != null) {
+            if (entity instanceof LivingEntity living)
+                renderEntity(x + 8, (int) (y + 8 + scale), scale, living);
+            else
+                renderEntity((int) (x + (2 * scale / 2)), (int) (y + (2 * scale)), scale, entity);
+        }
+    }
