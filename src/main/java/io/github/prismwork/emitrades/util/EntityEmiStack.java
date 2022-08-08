@@ -75,3 +75,11 @@ public class EntityEmiStack extends EmiStack {
                 renderEntity((int) (x + (2 * scale / 2)), (int) (y + (2 * scale)), scale, entity);
         }
     }
+
+    @Override
+    public NbtCompound getNbt() {
+        throw new UnsupportedOperationException("EntityEmiStack is not intended for NBT handling");
+    }
+
+    @Override
+    public Object getKey() {
