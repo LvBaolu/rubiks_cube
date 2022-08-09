@@ -83,3 +83,12 @@ public class EntityEmiStack extends EmiStack {
 
     @Override
     public Object getKey() {
+        return entity;
+    }
+
+    @Override
+    public Entry<?> getEntry() {
+        return entry;
+    }
+
+    @Override
