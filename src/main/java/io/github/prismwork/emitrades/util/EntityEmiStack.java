@@ -92,3 +92,12 @@ public class EntityEmiStack extends EmiStack {
     }
 
     @Override
+    public Identifier getId() {
+        if (entity == null) throw new RuntimeException("Entity is null");
+        return Registries.ENTITY_TYPE.getId(entity.getType());
+    }
+
+    @Override
+    public List<Text> getTooltipText() {
+        return List.of(getName());
+    }
