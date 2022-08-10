@@ -101,3 +101,16 @@ public class EntityEmiStack extends EmiStack {
     public List<Text> getTooltipText() {
         return List.of(getName());
     }
+
+    @Override
+    public List<TooltipComponent> getTooltip() {
+        List<TooltipComponent> list = new ArrayList<>();
+        if (entity != null) {
+            list.addAll(getTooltipText().stream().map(EmiPort::ordered).map(TooltipComponent::of).toList());
+            String mod;
+            if (entity instanceof VillagerEntity villager) {
+                mod = EmiUtil.getModName(Registries.VILLAGER_PROFESSION.getId(villager.getVillagerData().getProfession()).getNamespace());
+            } else {
+                mod = EmiUtil.getModName(Registries.ENTITY_TYPE.getId(entity.getType()).getNamespace());
+            }
+            list.add(TooltipComponent.of(EmiPort.ordered(EmiPort.literal(mod, Formatting.BLUE, Formatting.ITALIC))));
