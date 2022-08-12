@@ -120,3 +120,8 @@ public class EntityEmiStack extends EmiStack {
         }
         return list;
     }
+
+    @Override
+    public Text getName() {
+        return entity != null ? entity.getName() : EmiPort.literal("yet another missingno");
+    }
