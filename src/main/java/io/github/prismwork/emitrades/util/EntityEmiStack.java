@@ -150,3 +150,10 @@ public class EntityEmiStack extends EmiStack {
         matrixStack2.scale((float) size, (float) size, (float) size);
         Quaternionf quaternion = new Quaternionf().rotateZ(3.1415927F);
         Quaternionf quaternion2 = new Quaternionf().rotateX(g * 20.0F * 0.017453292F);
+        quaternion.mul(quaternion2);
+        matrixStack2.multiply(quaternion);
+        float h = entity.bodyYaw;
+        float i = entity.getYaw();
+        float j = entity.getPitch();
+        float k = entity.prevHeadYaw;
+        float l = entity.headYaw;
