@@ -180,3 +180,11 @@ public class EntityEmiStack extends EmiStack {
         RenderSystem.applyModelViewMatrix();
         DiffuseLighting.enableGuiDepthLighting();
     }
+
+    public static void renderEntity(int x, int y, double size, Entity entity) {
+        MinecraftClient client = MinecraftClient.getInstance();
+        Mouse mouse = client.mouse;
+        float w = 1920;
+        float h = 1080;
+        Screen screen = client.currentScreen;
+        if (screen != null) {
