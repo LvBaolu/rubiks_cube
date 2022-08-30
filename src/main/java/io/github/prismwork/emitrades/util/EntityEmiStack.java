@@ -188,3 +188,17 @@ public class EntityEmiStack extends EmiStack {
         float h = 1080;
         Screen screen = client.currentScreen;
         if (screen != null) {
+            w = screen.width;
+            h = screen.height;
+        }
+        float mouseX = (float) ((w + 51) - mouse.getX());
+        float mouseY = (float) ((h + 75 - 50) - mouse.getY());
+        float f = (float)Math.atan(mouseX / 40.0F);
+        float g = (float)Math.atan(mouseY / 40.0F);
+        MatrixStack matrixStack = RenderSystem.getModelViewStack();
+        matrixStack.push();
+        matrixStack.translate(x, y, 1050.0);
+        matrixStack.scale(1.0F, 1.0F, -1.0F);
+        RenderSystem.applyModelViewMatrix();
+        MatrixStack matrixStack2 = new MatrixStack();
+        matrixStack2.translate(0.0, 0.0, 1000.0);
