@@ -210,3 +210,9 @@ public class EntityEmiStack extends EmiStack {
         float i = entity.getYaw();
         float j = entity.getPitch();
         entity.setYaw(180.0F + f * 40.0F);
+        entity.setPitch(-g * 20.0F);
+        DiffuseLighting.method_34742();
+        EntityRenderDispatcher entityRenderDispatcher = MinecraftClient.getInstance().getEntityRenderDispatcher();
+        quaternion2.conjugate();
+        entityRenderDispatcher.setRotation(quaternion2);
+        entityRenderDispatcher.setRenderShadows(false);
