@@ -222,3 +222,11 @@ public class EntityEmiStack extends EmiStack {
         entityRenderDispatcher.setRenderShadows(true);
         entity.setYaw(i);
         entity.setPitch(j);
+        matrixStack.pop();
+        RenderSystem.applyModelViewMatrix();
+        DiffuseLighting.enableGuiDepthLighting();
+    }
+
+    public static class EntityEntry extends Entry<Entity> {
+        public EntityEntry(Entity value) {
+            super(value);
