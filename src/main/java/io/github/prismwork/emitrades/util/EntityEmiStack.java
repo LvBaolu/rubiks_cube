@@ -230,3 +230,9 @@ public class EntityEmiStack extends EmiStack {
     public static class EntityEntry extends Entry<Entity> {
         public EntityEntry(Entity value) {
             super(value);
+        }
+
+        @Override
+        public Class<? extends Entity> getType() {
+            return getValue().getType().getBaseClass();
+        }
