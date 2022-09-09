@@ -237,3 +237,4 @@ public class EntityEmiStack extends EmiStack {
             return getValue().getType().getBaseClass();
         }
     }
+}
