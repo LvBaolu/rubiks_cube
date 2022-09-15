@@ -9,3 +9,9 @@ public interface TradeProfile {
     TradeOffers.Factory offer();
 
     VillagerProfession profession();
+
+    int level();
+
+    MerchantEntity villager();
+
+    record DefaultImpl(VillagerProfession profession,
