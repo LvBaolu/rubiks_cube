@@ -15,3 +15,10 @@ public interface TradeProfile {
     MerchantEntity villager();
 
     record DefaultImpl(VillagerProfession profession,
+                       TradeOffers.Factory offer,
+                       int level,
+                       MerchantEntity villager) implements TradeProfile {
+        @Override
+        public TradeOffers.Factory offer() {
+            return offer;
+        }
