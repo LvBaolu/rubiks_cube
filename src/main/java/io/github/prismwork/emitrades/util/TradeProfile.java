@@ -22,3 +22,12 @@ public interface TradeProfile {
         public TradeOffers.Factory offer() {
             return offer;
         }
+
+        @Override
+        public VillagerProfession profession() {
+            return profession;
+        }
+
+        @Override
+        public int level() {
+            return level;
