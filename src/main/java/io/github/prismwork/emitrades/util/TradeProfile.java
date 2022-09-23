@@ -35,3 +35,7 @@ public interface TradeProfile {
 
         @Override
         public MerchantEntity villager() {
+            return villager;
+        }
+    }
+}
