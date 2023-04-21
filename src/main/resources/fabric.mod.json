@@ -3,3 +3,10 @@
   "schemaVersion": 1,
   "id": "emitrades",
   "version": "${version}",
+
+  "name": "EMI Trades",
+  "description": "Villager trades for EMI.",
+  "authors": [
+    "pkstDev"
+  ],
+  "contact": {
