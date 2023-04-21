@@ -10,3 +10,11 @@
     "pkstDev"
   ],
   "contact": {
+    "sources": "https://github.com/pkstDev/EMITrades"
+  },
+
+  "license": "MIT",
+  "icon": "assets/emitrades/icon.png",
+
+  "environment": "client",
+  "entrypoints": {
