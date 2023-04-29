@@ -18,3 +18,6 @@
 
   "environment": "client",
   "entrypoints": {
+    "emi": [
+      "io.github.prismwork.emitrades.EMITradesPlugin"
+    ]
