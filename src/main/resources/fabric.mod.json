@@ -21,3 +21,8 @@
     "emi": [
       "io.github.prismwork.emitrades.EMITradesPlugin"
     ]
+  },
+  "accessWidener" : "emitrades.accesswidener",
+
+  "depends": {
+    "fabricloader": ">=0.14.9",
